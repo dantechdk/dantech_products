@@ -56,7 +56,7 @@ function dantech_products_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -140,7 +140,7 @@ function dantech_products_field_default_fields() {
             'renderer' => '0',
           ),
           'type' => 'pdf_reader_file',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -242,7 +242,7 @@ function dantech_products_field_default_fields() {
             'image_style' => 'medium',
           ),
           'type' => 'image',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',

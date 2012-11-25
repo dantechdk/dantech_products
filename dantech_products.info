@@ -35,6 +35,7 @@ features[variable][] = comment_default_per_page_dantech_product
 features[variable][] = comment_form_location_dantech_product
 features[variable][] = comment_preview_dantech_product
 features[variable][] = comment_subject_field_dantech_product
+features[variable][] = field_bundle_settings_node__dantech_product
 features[variable][] = menu_options_dantech_product
 features[variable][] = menu_parent_dantech_product
 features[variable][] = node_options_dantech_product
