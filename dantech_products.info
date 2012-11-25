@@ -2,6 +2,7 @@ name = Dantech Products
 description = Provides feature for products
 core = 7.x
 package = Dantech
+php = 5.2.4
 version = 7.x-0.1
 project = dantech_products
 dependencies[] = ctools
