@@ -45,7 +45,7 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'dantech_product_list';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Felt: Indexed Indholdselement: Indholdselement ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_product_display';
@@ -126,7 +126,7 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'dantech_product_list';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
   /* Kontekstuelt filter: Indexed Indholdselement: Produkttype */
   $handler->display->display_options['arguments']['field_product_type']['id'] = 'field_product_type';
   $handler->display->display_options['arguments']['field_product_type']['table'] = 'search_api_index_product_display';
