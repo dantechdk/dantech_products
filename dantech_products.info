@@ -18,6 +18,7 @@ dependencies[] = options
 dependencies[] = pdf_reader
 dependencies[] = search_api
 dependencies[] = search_api_db
+dependencies[] = search_api_views
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
