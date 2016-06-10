@@ -46,7 +46,7 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Felt: Indexed Indholdselement: Indholdselement ID */
+  /* Field: Indexed Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -60,27 +60,6 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
-  $translatables['dantech_product_display'] = array(
-    t('Master'),
-    t('Produkter'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Antal elementer'),
-    t('- Alle -'),
-    t('Forskydning'),
-    t('« første'),
-    t('‹ forrige'),
-    t('næste ›'),
-    t('sidste »'),
-    t('Indholdselement ID'),
-    t('.'),
-    t(','),
-    t('Page'),
-  );
   $export['dantech_product_display'] = $view;
 
   $view = new view();
@@ -113,23 +92,23 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Forbindelse: Entity Reference: Referenced Entity */
+  /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_producent_target_id']['id'] = 'field_producent_target_id';
   $handler->display->display_options['relationships']['field_producent_target_id']['table'] = 'field_data_field_producent';
   $handler->display->display_options['relationships']['field_producent_target_id']['field'] = 'field_producent_target_id';
-  /* Felt: Indhold: Titel */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sorteringskriterie: Indhold: Oprettelsesdato */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Kontekstuelt filter: Indhold: Nid */
+  /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -145,14 +124,14 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'dantech_partner' => 'dantech_partner',
   );
-  /* Filterkriterie: Indhold: Udgivet */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterie: Indhold: Type */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -163,19 +142,6 @@ function dantech_products_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $translatables['dantech_product_for_partner'] = array(
-    t('Master'),
-    t('Produkter'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Indhold entity referenced from field_producent'),
-    t('Alle'),
-    t('Block'),
-  );
   $export['dantech_product_for_partner'] = $view;
 
   $view = new view();
@@ -213,7 +179,7 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Felt: Indhold: Rendered Indholdselement */
+  /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
@@ -222,7 +188,7 @@ function dantech_products_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
-  /* Kontekstuelt filter: Indexed Indholdselement: Produkttype */
+  /* Contextual filter: Indexed Node: Produkttype */
   $handler->display->display_options['arguments']['field_product_type']['id'] = 'field_product_type';
   $handler->display->display_options['arguments']['field_product_type']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['arguments']['field_product_type']['field'] = 'field_product_type';
@@ -236,30 +202,12 @@ function dantech_products_views_default_views() {
     'dantech_product_type' => 'dantech_product_type',
   );
   $handler->display->display_options['arguments']['field_product_type']['break_phrase'] = 0;
-  /* Filterkriterie: Indexed Indholdselement: Status */
+  /* Filter criterion: Indexed Node: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'search_api_index_product_display';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
-  );
-  $translatables['dantech_producttype_display'] = array(
-    t('Master'),
-    t('%1'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Antal elementer'),
-    t('- Alle -'),
-    t('Forskydning'),
-    t('« første'),
-    t('‹ forrige'),
-    t('næste ›'),
-    t('sidste »'),
-    t('Alle'),
   );
   $export['dantech_producttype_display'] = $view;
 

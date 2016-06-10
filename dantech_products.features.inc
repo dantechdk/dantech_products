@@ -7,8 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function dantech_products_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function dantech_products_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -17,8 +16,8 @@ function dantech_products_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function dantech_products_views_api() {
-  return array("version" => "3.0");
+function dantech_products_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -35,6 +34,7 @@ function dantech_products_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
 
@@ -53,16 +53,16 @@ function dantech_products_default_search_api_index() {
       "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
-        "nid" : { "type" : "integer" },
-        "type" : { "type" : "string" },
-        "status" : { "type" : "integer" },
-        "created" : { "type" : "date" },
         "changed" : { "type" : "date" },
-        "title_field" : { "type" : "string" },
-        "field_product_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "created" : { "type" : "date" },
         "field_producent" : { "type" : "integer", "entity_type" : "node" },
+        "field_product_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "nid" : { "type" : "integer" },
+        "search_api_aggregation_1" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
-        "search_api_aggregation_1" : { "type" : "text" }
+        "status" : { "type" : "integer" },
+        "title_field" : { "type" : "string" },
+        "type" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -125,8 +125,7 @@ function dantech_products_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "0",
-    "rdf_mapping" : []
+    "read_only" : "0"
   }');
   return $items;
 }
